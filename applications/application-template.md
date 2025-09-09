@@ -1,3 +1,54 @@
+Here’s an expanded version of the section you asked about, tailored for the AIXS Token grant proposal:
+
+---
+
+📐 Expected Final State & Technical Documentation
+We expect the AIXS Token platform to evolve into a robust, production-ready protocol for hosting and monetizing AI models across a decentralized ecosystem. To support this vision, we provide the following technical documentation and assets:
+🖼️ Mockups / UI Designs
+• Model Onboarding Dashboard: A web interface for AI vendors to upload models, define access permissions, and set token pricing.
+• Token-Gated Access Panel: A user-facing interface for interacting with hosted models, including wallet connection, balance display, and inference triggers.
+• Admin Console: For managing model metadata, usage analytics, and governance settings.
+🧬 Data Models / API Specifications
+• Model Registry Schema:
+• {
+  "model_id": "uuid",
+  "owner": "wallet_address",
+  "access_type": "public | private | token-gated",
+  "price_per_call": "uint256",
+  "metadata": {
+    "name": "string",
+    "description": "string",
+    "tags": ["AI", "NLP", "Vision"]
+  }
+}
+
+• API Endpoints:
+    • POST /models/register: Upload and register a model
+    • GET /models/:id: Retrieve model metadata
+    • POST /models/:id/infer: Trigger inference (token-gated)
+    • GET /models/:id/usage: View usage logs
+🧱 Technology Stack
+• Blockchain Layer: Substrate (Rust), Polkadot SDK, XCM for cross-chain
+• Smart Contracts: Ink! or Solidity (for Ethereum bridge)
+• Frontend: React + Tailwind CSS
+• Backend: FastAPI (Python) with TEE integration
+• Token Streaming: Superfluid / Sablier
+• Wallets: Polkadot.js, Talisman, SubWallet
+📚 Core Components & Architecture
+• AIXS Token Pallet: Handles minting, burning, staking, and governance
+• Model Registry Contract: Stores model metadata and access logic
+• Inference Gateway: Routes requests to TEE-hosted models
+• Confidential Execution Layer: Uses Intel SGX / AMD SEV for secure model inference
+• Analytics Module: Tracks usage, token flow, and performance
+🧪 PoC / MVP
+• A working CLI and dashboard prototype for registering and accessing AI models
+• Token integration with Polkadot.js wallet
+• Sample models hosted in a simulated TEE environment
+• GitHub repo: https://github.com/Deepbody-me/AIXS-Token
+
+
+
+
 # Name of your Project
 
 ## Project Overview
@@ -93,40 +144,4 @@ This section should break the development roadmap down into milestones and deliv
 | -----: | ----------- | ------------- |
 | 0a. | License | Apache 2.0 / GPLv3 / MIT / Unlicense. See the [delivery guidelines](https://github.com/PolkadotOpenSourceGrants/delivery/blob/master/delivery-guidelines.md#license) for details. |
 | 0b. | Documentation | We will provide both **inline documentation** of the code and a basic **tutorial** that explains how a user can... See the [delivery guidelines](https://github.com/PolkadotOpenSourceGrants/delivery/blob/master/delivery-guidelines.md#documentation) for details. |
-| 0c. | Testing and Testing Guide | Core functions will be fully covered by comprehensive unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. See the [delivery guidelines](https://github.com/PolkadotOpenSourceGrants/delivery/blob/master/delivery-guidelines.md#testing-guide) for details. |
-| 0d. | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
-| 0e. | Article | We will publish an **article**/workshop that explains [...] (what was done/achieved as part of the grant). (Content, language, and medium should reflect your target audience described above.) |
-| 1. | Pallet X | We will create a Substrate module that will... (Please list the functionality that will be implemented for the first milestone. You can refer to details provided in previous sections.) |
-| 2. | Smart contract Y | The Y Substrate module will... |
-| 3. | Substrate chain | X and Y of our custom chain will interact in such a way... (Please describe the deliverable here as detailed as possible) |
-| 4. | Library: ABC | We will deliver a JS library that will implement the functionality described under "ABC Library" |
-
-### Budget Breakdown (Example, please adapt)
- **Category:** Budget Breakdown positions are split within the following categories: 
- 
-- Personnel
-- Equipment
-- Subcontracts/Subscriptions
-
-| Category | Item | Cost | Amount | Total | Description |
-| --- | ---- | --- | --- | --- | ---|
-| Personell | Full-Stack Developer | 8,000 USD | 0.5 FTE | 4,000 USD | leading project with tech architecture and design |
-| Personell | Smart Contract Developer | 10,000 USD | 1 FTE | 10,000 USD | focused on execution and implementation |
-| --- | --- | --- | **Total** | **14,000 USD** |  |
-
-
-## Future Plans
-
-Please include here
-
-- how you intend to finance the project's long-term maintenance and development,
-- how you intend to use, enhance, and promote your project in the short term, and
-- the team's long-term plans and intentions in relation to it.
-
-## Additional Information
-
-Here you can also add any additional information that you think is relevant to this application but isn't part of it already, such as:
-
-- Work you have already done
-- If there are any other teams who have already contributed (financially) to the project
-- Please declare if you have submitted this product for funding to any other entities, wether you got funded, how much you got funded, and provide any other relevant details.
+| 0c. | Testing and Testing Guide | Core functions will be fully covered by comprehensive unit tests to ensure functionality and robustness. In the guide, we will describe how to run these .
